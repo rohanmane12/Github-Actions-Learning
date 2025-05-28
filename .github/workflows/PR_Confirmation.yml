@@ -1,0 +1,17 @@
+name: PR Auto Comment
+
+on:
+  pull_request:
+    types: [opened]  # Trigger only when a PR is opened
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Say Hello to PR Author
+        run: |
+          curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d '{"body":"🚀 Thanks for opening this PR! Soham will review it soon. 🎯"}' \
+            "https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/comments"
