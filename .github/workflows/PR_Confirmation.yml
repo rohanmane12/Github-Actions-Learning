@@ -2,6 +2,7 @@ name: PR Auto Comment
 
 permissions:
   issues: write
+  pull-requests: write  # Add this line to fix the permission issue
   
 on:
   pull_request:
