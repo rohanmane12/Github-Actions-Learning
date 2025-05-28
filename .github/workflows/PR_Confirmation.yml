@@ -1,5 +1,8 @@
 name: PR Auto Comment
 
+permissions:
+  issues: write
+  
 on:
   pull_request:
     types: [opened]  # Trigger only when a PR is opened
