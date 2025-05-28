@@ -1,0 +1,18 @@
+name:Push_Msg_Workflow
+
+on:
+  push:
+    branches:
+      -main
+
+jobs:
+  say-hello:
+    runs-on:ubuntu-latest
+
+    steps:
+      -name:Checkout code
+      uses:actions/checkout@v4
+
+      -name:echo_msg
+      run: echo "Hello User, thank you for your commit"
+      
